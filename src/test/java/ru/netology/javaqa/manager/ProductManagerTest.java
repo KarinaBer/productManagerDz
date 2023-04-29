@@ -32,45 +32,46 @@ public class ProductManagerTest {
 
     @Test
     public void shouldReverseAllProducts() {
-        Product[] expected = {book1,book2,book3, book4, smartphone1,smartphone2,smartphone3};
+        Product[] expected = {book1, book2, book3, book4, smartphone1, smartphone2, smartphone3};
         Product[] actual = manager.getAll();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindBookByName() {
 
-        Product[] expected = new Product[] {book1};
+        Product[] expected = new Product[]{book1};
         Product[] actual = manager.searchBy("Стихи");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldFindSomeBookByName() {
 
-        Product[] expected = new Product[] {book3, book4};
+        Product[] expected = new Product[]{book3, book4};
         Product[] actual = manager.searchBy("Сказки");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldFindSmartphoneByName() {
 
-        Product[] expected = new Product[] {smartphone3};
+        Product[] expected = new Product[]{smartphone3};
         Product[] actual = manager.searchBy("XR");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldNotFindAnything() {
 
-        Product[] expected = new Product[] {};
+        Product[] expected = new Product[]{};
         Product[] actual = manager.searchBy("Басни");
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
 }

@@ -1,4 +1,5 @@
 package ru.netology.javaqa.domain;
+
 public class Smartphone extends Product {
     private String manufacturer;
 
@@ -7,7 +8,7 @@ public class Smartphone extends Product {
         this.manufacturer = manufacturer;
     }
 
-    public String getManufacturer () {
+    public String getManufacturer() {
         return manufacturer;
     }
 }

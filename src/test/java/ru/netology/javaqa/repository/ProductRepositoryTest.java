@@ -24,12 +24,13 @@ public class ProductRepositoryTest {
         repository.save(smartphone2);
         repository.save(smartphone3);
 
-        Product[] expected = new Product[] {book1, book2, book3, smartphone1, smartphone2, smartphone3};
+        Product[] expected = new Product[]{book1, book2, book3, smartphone1, smartphone2, smartphone3};
         Product[] actual = repository.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void shouldAddSomeProducts() {
         repository.save(book1);
@@ -41,6 +42,7 @@ public class ProductRepositoryTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldNotAddAnything() {
         Product[] expected = new Product[]{};
@@ -62,11 +64,12 @@ public class ProductRepositoryTest {
         repository.removeById(3);
         repository.removeById(6);
 
-        Product[] expected = new Product[]{book2,smartphone1,smartphone2};
+        Product[] expected = new Product[]{book2, smartphone1, smartphone2};
         Product[] actual = repository.findAll();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldRemoveByIdOneProduct() {
         repository.save(book1);
@@ -78,11 +81,12 @@ public class ProductRepositoryTest {
 
         repository.removeById(1);
 
-        Product[] expected = new Product[]{book2,book3,smartphone1,smartphone2,smartphone3};
+        Product[] expected = new Product[]{book2, book3, smartphone1, smartphone2, smartphone3};
         Product[] actual = repository.findAll();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldRemoveByIdTwoProducts() {
         repository.save(book1);
@@ -100,6 +104,7 @@ public class ProductRepositoryTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldRemoveByIdAllProducts() {
         repository.save(book1);
@@ -119,6 +124,6 @@ public class ProductRepositoryTest {
         Product[] expected = new Product[]{};
         Product[] actual = repository.findAll();
 
-        Assertions.assertArrayEquals(expected,actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 }
