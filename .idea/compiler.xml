@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="productManagerDz" options="--add-exports java.base/sun.security.util=ALL-UNNAMED" />
+      <module name="productManagerDz" options="" />
     </option>
   </component>
 </project>

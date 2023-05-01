@@ -2,6 +2,7 @@ package ru.netology.javaqa.repository;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ru.netology.javaqa.NotFoundException;
 import ru.netology.javaqa.domain.Book;
 import ru.netology.javaqa.domain.Product;
 import ru.netology.javaqa.domain.Smartphone;
@@ -125,5 +126,20 @@ public class ProductRepositoryTest {
         Product[] actual = repository.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldThrowExceptionForNonExistentId() {
+        repository.save(book1);
+        repository.save(book2);
+        repository.save(book3);
+        repository.save(smartphone1);
+        repository.save(smartphone2);
+        repository.save(smartphone3);
+
+        Assertions.assertThrows(NotFoundException.class,
+                () -> {
+                    repository.removeById(8);
+                });
     }
 }
